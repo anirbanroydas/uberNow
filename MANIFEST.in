@@ -1,0 +1,18 @@
+# Include Misc files
+include README.rst
+include LICENSE
+
+# inlcude templatesc
+recursive-include uberNow/templates *
+
+# include static js files
+recursive-include uberNow/static/js *
+
+# include static css files
+recursive-include uberNow/static/css *
+
+
+# include docs
+recursive-include docs *
+
+
