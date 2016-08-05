@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Uber Now</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
+		<link rel="stylesheet" href="../static/css/style.css">
+
+		<!-- jQuery -->
+		<script  async src="//code.jquery.com/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+		<script async src="https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+ 		
+
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<h1 class="text-center">Uber Now</h1>
+
+
+		<div class="container-fluid top">
+			<div class="row">
+			  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<form class="form-inline"  method="POST" role="form">
+					<legend>Input</legend>
+				
+					<div class="form-group">
+					    <label for="exampleInputName2">Source</label>
+					    <input type="text" class="form-control" id="source" placeholder="latitude,longitude">
+					</div>
+					<div class="form-group">
+					    <label for="exampleInputName2">Destination</label>
+					    <input type="text" class="form-control " id="destination" placeholder="latitude,longitude">
+					</div>
+					<div class="form-group">
+					    <label for="exampleInputName2">Time</label>
+					    <input type="text" class="form-control" id="time" placeholder="9:00pm">
+					</div>
+					<div class="form-group">
+					    <label for="exampleInputEmail2">Email</label>
+					    <input type="email" class="form-control" id="email" placeholder="jane.doe@example.com">
+					</div>
+				
+					
+				
+					<button type="submit" class="btn btn-primary" id="sub">Submit</button>
+				</form>
+			   </div>
+			</div>
+			<div class="row " >
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 livestream">
+					
+					<ul class="streams"> 
+						<li class="stream">Requested Uber Api for [xyz@example.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li>  
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+						<li class="stream">Requested Uber Api for [abc@xy.com]</li> 
+
+					</ul>
+
+				</div>
+			</div>
+		</div>
+
+		
+	</body>
+	<script  src="../static/js/script.js"></script>
+</html>
