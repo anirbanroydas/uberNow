@@ -7,7 +7,7 @@ It is an app to notify users via email as to when to book an uber as per given t
 Documentation
 --------------
 
-**Link :** http://uberNow.readthedocs.io/en/latest/
+**Link :** http://ubernow.readthedocs.io/en/latest/
 
 
 Project Home Page
