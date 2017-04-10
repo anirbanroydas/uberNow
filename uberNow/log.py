@@ -529,78 +529,80 @@ class RabbitLogClient(object):
 
 class Log():
 
-	NOTSET = 0
-	DEBUG = 10
-	INFO = 20
-	WARNING = 30
-	ERROR = 40
-	CRITICAL = 50
+    NOTSET = 0
+    DEBUG = 10
+    INFO = 20
+    WARNING = 30
+    ERROR = 40
+    CRITICAL = 50
 
-	# Example Log Structure : 
-	# { 'type': 'ERROR',
-	#   'time': '12-07-2016 08:35:43 pm',
-	#   'location': 'ubernow.apps.main.views.IndexHandler',
-	#   'msg': 'Invalid Request Error',
-	#   'description': 'The request type is invalid',
-	# 	'other/request/call' : 'any arbitrary info to be added to description'
-	#  }
+    # Example Log Structure :
+    # { 'type': 'ERROR',
+    #   'time': '12-07-2016 08:35:43 pm',
+    #   'location': 'ubernow.apps.main.views.IndexHandler',
+    #   'msg': 'Invalid Request Error',
+    #   'description': 'The request type is invalid',
+    #   'other/request/call' : 'any arbitrary info to be added to description'
+    #  }
 
-	def __init__(self, app_name='default', loglevel=10, exchange=EXCHANGE, exchange_type=EXCHANGE_TYPE):
-		self.loglevel = loglevel
-		self.log_client = RabbitLogClient(exchange=exchange,
-                                    exchange_type=exchange_type,
-                                    exchange_durability=True,
-                                    logid=None
-                                    )
-		self.log_client.start()
+    def __init__(self, app_name='default', loglevel=10, exchange=EXCHANGE, exchange_type=EXCHANGE_TYPE):
+        self.loglevel = loglevel
         self.app_name = app_name
+        self.log_client = RabbitLogClient(exchange=exchange,
+                                          exchange_type=exchange_type,
+                                          exchange_durability=True,
+                                          logid=None
+                                          )
 
-	def setLevel(self, loglevel):
-		self.loglevel = loglevel
-
-
-	def getLevel(self):
-		return self.loglevel
-
-
-	def log_msg(self, loglevel, msg):
-		if loglevel >= self.loglevel:
-			msg['time'] = utils.localTime()
-			self.log_client.publish(msgpack.packb(msg, use_bin_type=True),
-                           routing_key=self.app_name + '.' + str(loglevel),
-                           exchange='log_exchange',
-                           delivery_mode=2
-                           )
-
-	def debug(self, msg):
-		msg['type'] = 'DEBUG'
-		self.log_msg(Log.DEBUG, msg)
+        self.log_client.start()
 
 
-
-	def info(self, msg):
-		msg['type'] = 'INFO'
-		self.log_msg(Log.INFO, msg)
+    def setLevel(self, loglevel):
+        self.loglevel = loglevel
 
 
-
-	def warning(self, msg):
-		msg['type'] = 'WARNING'
-		self.log_msg(Log.WARNING, msg)
+    def getLevel(self):
+        return self.loglevel
 
 
-	def error(self, msg):
-		msg['type'] = 'ERROR'
-		self.log_msg(Log.ERROR, msg)
+    def log_msg(self, loglevel, msg):
+        if loglevel >= self.loglevel:
+            msg['time'] = utils.localTime()
+            self.log_client.publish(msgpack.packb(msg, use_bin_type=True),
+                                    routing_key=self.app_name + '.' + str(loglevel),
+                                    exchange='log_exchange',
+                                    delivery_mode=2
+                                    )
+
+    def debug(self, msg):
+        msg['type'] = 'DEBUG'
+        self.log_msg(Log.DEBUG, msg)
 
 
-	def critical(self, msg):
-		msg['type'] = 'CRITICAL'
-		self.log_msg(Log.CRITICAL, msg)
+
+    def info(self, msg):
+        msg['type'] = 'INFO'
+        self.log_msg(Log.INFO, msg)
 
 
-	def log(self, msg):
-		msg['type'] = 'NOTSET'
-		self.log_msg(Log.NOTSET, msg)
+
+    def warning(self, msg):
+        msg['type'] = 'WARNING'
+        self.log_msg(Log.WARNING, msg)
+
+
+    def error(self, msg):
+        msg['type'] = 'ERROR'
+        self.log_msg(Log.ERROR, msg)
+
+
+    def critical(self, msg):
+        msg['type'] = 'CRITICAL'
+        self.log_msg(Log.CRITICAL, msg)
+
+
+    def log(self, msg):
+        msg['type'] = 'NOTSET'
+        self.log_msg(Log.NOTSET, msg)
 
 
