@@ -2,43 +2,49 @@ Installation
 =============
 
 
-Prerequisites
---------------
+Prerequisite (Optional)
+-----------------------------------------
 
-1. python 2.7+
-2. tornado
-3. sockjs-tornado 
-4. sockjs-client (optional, just for example webapp)
+To safegurad secret and confidential data leakage via your git commits to public github repo, check ``git-secrets``.
+
+This `git secrets <https://github.com/awslabs/git-secrets>`_ project helps in preventing secrete leakage by mistake.
+
+
+Dependencies
+-------------------------------
+
+1. Docker
+2. Make (Makefile)
+
+See, there are so many technologies used mentioned in the tech specs and yet the dependencies are just two. This is the power of Docker. 
 
 
 Install
--------
+------------------------
 
-::
+* **Step 1 - Install Docker**
 
-        $ pip install uberNow
+  Follow my another github project, where everything related to DevOps and scripts are mentioned along with setting up a development environemt to use Docker is mentioned.
 
-If above dependencies do not get installed by the above command, then use the below steps to install them one by one.
+    * Project: https://github.com/anirbanroydas/DevOps
 
- **Step 1 - Install pip**
+  * Go to setup directory and follow the setup instructions for your own platform, linux/macos
 
- Follow the below methods for installing pip. One of them may help you to install pip in your system.
+* **Step 2 - Install Make**
+  ::
 
- * **Method 1 -**  https://pip.pypa.io/en/stable/installing/
+      # (Mac Os)
+      $ brew install automake
 
- * **Method 2 -** http://ask.xmodulo.com/install-pip-linux.html
+      # (Ubuntu)
+      $ sudo apt-get update
+      $ sudo apt-get install make
 
- * **Method 3 -** If you installed python on MAC OS X via ``brew install python``, then **pip** is already installed along with python.
+* **Step 3 - Install Dependencies**
+  
+  Install the following dependencies on your local development machine which will be used in various scripts.
 
-
- **Step 2 - Install tornado**
- ::
-
-         $ pip install tornado
-
- **Step 3 - Install sockjs-tornado**
- ::
-
-         $ pip install sockjs-tornado
-
+  1. openssl
+  2. ssh-keygen
+  3. openssh
 
