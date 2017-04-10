@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+
+  uberNow_unit_tester:
+    build: ../..
+    image: aroyd/uberNow_unit_tester:${UBERNOW_UNIT_TEST_IMAGE_TAG:-latest}
+    environment:
+      ENV: UNIT_TEST 
+    # volumes:
+    #   - .:/project
+
+
