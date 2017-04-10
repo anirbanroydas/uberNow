@@ -18,7 +18,7 @@ import os
 
 NAME = "uberNow"
 
-VERSION = '1.0'
+VERSION = '1.1.0'
 
 
 PACKAGES = ["uberNow", "uberNow.apps", "uberNow.apps.main", "uberNow.apps.custom"]
