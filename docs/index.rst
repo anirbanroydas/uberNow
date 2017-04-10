@@ -9,7 +9,7 @@ uberNow Docs!
 
 It is an app to notify users via email as to when to book an uber as per given time to reach a specified destination from a specified source.
 
-**Home Page :** https://pypi.python.org/pypi/uberNow
+**Home Page :** https://www.github.com/anirbanroydas/uberNow
 
 
 Details
@@ -17,7 +17,7 @@ Details
 
 :Author: Anirban Roy Das         
 :Email: anirban.nick@gmail.com
-:Copyright(C): 2016, Anirban Roy Das <anirban.nick@gmail.com>
+:Copyright(C): 2017, Anirban Roy Das <anirban.nick@gmail.com>
 
 Check ``uberNow/LICENSE`` file for full Copyright notice.
 
@@ -30,12 +30,14 @@ Documentation:
    :maxdepth: 2
 
    overview
+   problem_statement
+   algorithm_logic
    features
-   working
    installation
+   ci_setup
    usage
    api
-   references
+   testing
 
 
 
